@@ -1,0 +1,28 @@
+describe("Login with spicejet",()=>{
+    it("Register",()=>{
+
+    })
+    it("Signup",()=>{
+        cy.visit("https://spiceclub.spicejet.com/signup")
+        cy.wait(5000)
+        //cy.get("div[class='css-76zvg2 r-jwli3a r-ubezar']").click()
+       //cy.get("div[class='css-76zvg2 r-jwli3a r-ubezar']").click()
+       cy.get('.col-sm-4 > .form-control').should("be.visible")
+        cy.get('.col-sm-4 > .form-control').select("MR")
+        cy.get('#first_name').should("be.visible").type("Rahul")
+        //cy.get('#first_name').should("Not.be.visible").type("Rahul")
+        cy.get('#last_name').should("be.visible").type("Singh")
+        cy.get(':nth-child(3) > :nth-child(1) > .form-control').should("be.visible").select("Guinea")
+        cy.get('#dobDate').click().should("be.visible").type("16-December-2001")
+        cy.get('.react-tel-input > .form-control').should("be.visible").type("9421146177")
+        cy.get('#email_id').should("be.visible").click()
+        cy.get('#email_id').should("be.visible").type("rahul@gmail.com")
+        cy.get('#new-password').should("be.visible").click()
+        cy.get('#new-password').should("be.visible").type("Abcd1234%")
+        cy.get('#c-password').should("be.visible").click()
+        cy.get('#c-password').should("be.visible").type()
+        //cy.get('.form-check').check()
+        cy.get('#defaultCheck1').should("be.visible").check()
+        cy.get('.px-sm-4 > a > .btn').should("be.visible").click()
+    })
+})
